@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Stock Trend Predictor
 
 Explainable multi-modal stock prediction using XGBoost, technical indicators, and financial sentiment analysis.
@@ -48,3 +49,6 @@ streamlit run app.py
 - **SHAP** explainability
 
 Expected accuracy: 54-65%
+=======
+# stock_rag
+>>>>>>> 1543c7c542cb75014bfd64ff406979dd754f48d2

@@ -1,0 +1,70 @@
+data:
+  tickers:
+    [AAPL, TSLA, MSFT, RELIANCE.NS, TCS.NS, INFY.NS, HDFCBANK.NS, WIPRO.NS]
+  start_date: "2021-01-01"
+  end_date: "2024-01-01"
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+
+news:
+  api_key: ""
+  articles_per_ticker: 10
+  use_mock_fallback: true
+
+sentiment:
+  engine: "finbert"
+  model_name: "ProsusAI/finbert"
+  batch_size: 16
+  neutral_default: 0.33
+
+indicators:
+  sma_windows: [20, 50]
+  ema_windows: [12, 26]
+  rsi_window: 14
+  macd_fast: 12
+  macd_slow: 26
+  macd_signal: 9
+  bb_window: 20
+  bb_std: 2.0
+
+model:
+  save_path: "models/xgboost_model.json"
+  scaler_path: "models/scaler.pkl"
+  test_size: 0.2
+  random_state: 42
+
+xgboost:
+  n_estimators: 1000
+  max_depth: 6
+  learning_rate: 0.05
+  subsample: 0.8
+  colsample_bytree: 0.8
+  min_child_weight: 5
+  gamma: 0.1
+  reg_alpha: 0.1
+  reg_lambda: 1.0
+  scale_pos_weight: 1
+  eval_metric: "logloss"
+  early_stopping_rounds: 50
+  tree_method: "hist"
+
+hyperparameter_tuning:
+  enabled: true
+  method: "optuna"
+  n_trials: 50
+  cv_folds: 5
+  scoring: "f1"
+  search_space:
+    max_depth: [3, 10]
+    learning_rate: [0.01, 0.3]
+    n_estimators: [100, 1000]
+    subsample: [0.6, 1.0]
+    colsample_bytree: [0.6, 1.0]
+    min_child_weight: [1, 10]
+    gamma: [0.0, 0.5]
+    reg_alpha: [0.0, 1.0]
+    reg_lambda: [0.5, 2.0]
+
+outputs:
+  plots_dir: "outputs/plots"
+  reports_dir: "outputs/reports"

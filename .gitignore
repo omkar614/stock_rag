@@ -1,0 +1,65 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Logs and runtime files
+logs/
+*.log
+
+# Local data and generated outputs
+data/processed/
+models/
+outputs/
+
+# Secrets and secured files
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.der
+*.secret
+secrets/
+credentials/
+keys/
+
+# Generated or irrelevant markdown/docs
+BUG_FIX*.md
+*SUMMARY*.md
+*VERIFICATION*.md
+*FIXES*.md
+*CHECKLIST*.md
+*DOCUMENTATION_MAP*.md
+*ENVIRONMENT_SETUP*.md
+*ERROR_LOGGING_GUIDE*.md
+*DELIVERY_SUMMARY*.md
+*PROJECT_GENERATED*.md
+*STREAMLIT_FIX*.md
+*README_FIXES*.md
+*VISUAL_SUMMARY*.md
+PROMPT.md
+INDIAN_STOCKS*.md
+IMPLEMENTATION_CHECKLIST.md
+FIX_DOCUMENTATION_INDEX.md
